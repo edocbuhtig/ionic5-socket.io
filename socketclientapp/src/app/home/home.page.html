@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card padding>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Server Host + Port</ion-label>
+        <ion-input [(ngModel)]="server_add" placeholder="http://localhost:5000" value="http://localhost:5000"></ion-input>
+        
+      </ion-item>
+  
+  
+    </ion-list>
+  
+    <div class="ion-padding">
+  
+      <button ion-button (click)="connect()">
+        CONNECT
+      </button>
+     
+    </div>
+  </ion-card>
+  
+  <ion-card padding>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Client Messsage</ion-label>
+        <ion-input [(ngModel)]="text_input" placeholder="Enter your message"></ion-input>
+        
+      </ion-item>
+      
+    </ion-list>
+  
+    <div class="ion-padding">
+  
+      <button ion-button (click)="send(text_input)">
+        SEND
+      </button>
+     
+    </div>
+  </ion-card>
+  
+    
+  <ion-card padding>
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        
+        <ion-item>
+          <ion-label position="stacked">Server Response</ion-label>
+          <ion-textarea readonly="true" value="{{ server_response }}"></ion-textarea>
+        </ion-item>
+      </ion-list>
+  </ion-card>
+</ion-content>
